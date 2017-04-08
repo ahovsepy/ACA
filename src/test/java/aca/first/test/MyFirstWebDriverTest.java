@@ -28,9 +28,7 @@ public class MyFirstWebDriverTest {
 		 WebDriver driver = new ChromeDriver();
 		 driver.get("http://aca.am");
 		 
-		 class LinkedIn {
 		 
-		 } 
 			  driver.get("https://www.linkedin.com/");
 			  driver.manage().window().maximize();
 			  /*driver.findElement(By.id("reg-firstname")).sendKeys("Vika");
