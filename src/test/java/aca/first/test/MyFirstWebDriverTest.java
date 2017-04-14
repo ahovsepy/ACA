@@ -11,8 +11,12 @@ import org.testng.annotations.Test;
 
 import java.io.InputStream;
 import java.util.Scanner;
+
+import javax.swing.JTextField;
+
 import java.net.URL;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -22,7 +26,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class MyFirstWebDriverTest {
 	
 	@Test()
-	public void myFirstTest() throws Throwable{
+	public void myFirstTest() {
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Vika\\Downloads\\chromedriver_win32\\chromedriver.exe");
 		 WebDriver driver = new ChromeDriver();
 		 	 
@@ -41,8 +45,6 @@ public class MyFirstWebDriverTest {
 				assert true;
 				System.out.println("Test complited");
 			
-	
-	 /*@Test*/
 	 		  
 			  driver.findElement(By.id("login-email")).sendKeys("karine.tadevosyan51@gmail.com");
 			  driver.findElement(By.id("login-password")).sendKeys("pa$$word");
@@ -53,35 +55,22 @@ public class MyFirstWebDriverTest {
 				assert true;
 				System.out.println("Test complited");
 			  
-     /*@Test*/
-			 
-			 // driver.findElement(By.id("jobs-tab-icon")).click();
-			  //driver.findElement(By.xpath("//*/html/body/div[3]/div/div[1]/div/section/div/div/div[1]/div/div/input")).getText();
-			 // driver.findElement(By.xpath("//*[@id='html/body/div[3]/div/div[1]'")).click();
-			  //Scanner scan =new Scanner(System.in);
-			 // String input = scan.nextLine();
-			  //System.out.println("Quality Assurance");
-			  
-			  
-			  
-			  
-			    
-
-
+     
+				driver.findElement(By.id("profile-nav-item")).click();
+				driver.findElement(By.xpath("//*[@id='nav-settings__dropdown-options']/li[1]")).click();
+				driver.findElement(By.id("profile-nav-item")).click();
+				driver.findElement(By.xpath("/html/body/nav/div/ul[1]/li[6]/div/ul/li[4]")).click();
 				
-			//  driver.findElement(By.id("profile-nav-item")).click();
-			  
-			//  driver.findElement(By.xpath("//*[@id='nav-settings__dropdown-options']/li[1]")).click();
-			  //URL url = getClass().getResource("image.jpeg");
-			//  driver.findElement(By.xpath("//*//a[contains(@href, 'logout'")).click();	  
+				String Profile=driver.getTitle();
+				System.out.println("Title is" +Profile);
+				assert true;
+				System.out.println("Test complited");
+				
+				//Thread.sleep(2000);	 
 		 
-			 // Thread.sleep(2000);	 
+		 driver.close();
+		 driver.quit();
 		 
-		 //driver.close();
-			  
-			  
-			  
-		 //driver.quit();
 	}
 }
 		 
