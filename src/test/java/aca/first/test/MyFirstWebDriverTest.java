@@ -3,45 +3,26 @@ package aca.first.test;
 
 
 /*Test Case 01
-Title: Login Page-LinkedIn.com and register new user
-Description: A registered new user should be able to sucessfully login on LinkedIn.com
-Steps:
-1. Navigate to LinkedIn.com
-2. In the First and Last name fields write correct name;
-3. In the email field write valid e-mail address;
-4. In the password field write password that will be contain of 6 or more characters;
-5. Click "Join now" button
 
-Expected Result: Authorization new user should be able successful.
-
-Test Case 02
-Description: Create new user on www.linkedIn.com
-Steps:
-1. Navigate to www.linkedIn.com;
-2. Enter Email address;
-3. Enter password;
-5. Click "Sign In" button 
-6  After loading user home page immediately click "Sign out" button and close page.
-
-Expected Result: Page should be able to open succesfull, displaying the linkedIn user`s home page.
-
-Test Case 03
-Description: 
 */
 
 
 import org.testng.annotations.Test;
+
+import java.io.InputStream;
+import java.util.Scanner;
+import java.net.URL;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
+
+
 
 
 public class MyFirstWebDriverTest {
 	
 	@Test()
-	public void myFirstTest(){
+	public void myFirstTest() throws Throwable{
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Vika\\Downloads\\chromedriver_win32\\chromedriver.exe");
 		 WebDriver driver = new ChromeDriver();
 		 	 
@@ -62,24 +43,45 @@ public class MyFirstWebDriverTest {
 			
 	
 	 /*@Test*/
+	 		  
 			  driver.findElement(By.id("login-email")).sendKeys("karine.tadevosyan51@gmail.com");
 			  driver.findElement(By.id("login-password")).sendKeys("pa$$word");
 			  driver.findElement(By.id("login-submit")).click();
 			  
-			 driver.findElement(By.name("data-control-name=nav.settings_signout")).click();
+			  	String HomePage=driver.getTitle();
+				System.out.println("Title is" +HomePage);
+				assert true;
+				System.out.println("Test complited");
 			  
-			  
+     /*@Test*/
 			 
+			 // driver.findElement(By.id("jobs-tab-icon")).click();
+			  //driver.findElement(By.xpath("//*/html/body/div[3]/div/div[1]/div/section/div/div/div[1]/div/div/input")).getText();
+			 // driver.findElement(By.xpath("//*[@id='html/body/div[3]/div/div[1]'")).click();
+			  //Scanner scan =new Scanner(System.in);
+			 // String input = scan.nextLine();
+			  //System.out.println("Quality Assurance");
+			  
+			  
+			  
+			  
 			    
 
 
 				
-				  
+			//  driver.findElement(By.id("profile-nav-item")).click();
+			  
+			//  driver.findElement(By.xpath("//*[@id='nav-settings__dropdown-options']/li[1]")).click();
+			  //URL url = getClass().getResource("image.jpeg");
+			//  driver.findElement(By.xpath("//*//a[contains(@href, 'logout'")).click();	  
 		 
+			 // Thread.sleep(2000);	 
 		 
-		 
-		 driver.close();
-		 driver.quit();
+		 //driver.close();
+			  
+			  
+			  
+		 //driver.quit();
 	}
 }
 		 
