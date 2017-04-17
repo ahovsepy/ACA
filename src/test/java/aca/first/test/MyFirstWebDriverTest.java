@@ -55,7 +55,7 @@ public class MyFirstWebDriverTest {
 				assert true;
 				System.out.println("Test complited");
 			  
-     
+				
 				driver.findElement(By.id("profile-nav-item")).click();
 				driver.findElement(By.xpath("//*[@id='nav-settings__dropdown-options']/li[1]")).click();
 				driver.findElement(By.id("profile-nav-item")).click();
@@ -66,7 +66,7 @@ public class MyFirstWebDriverTest {
 				assert true;
 				System.out.println("Test complited");
 				
-				//Thread.sleep(2000);	 
+					 
 		 
 		 driver.close();
 		 driver.quit();
