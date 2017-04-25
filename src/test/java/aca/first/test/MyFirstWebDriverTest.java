@@ -34,6 +34,7 @@ public class MyFirstWebDriverTest {
 			  driver.get("https://www.linkedin.com/");
 			  driver.manage().window().maximize();
 			  
+			 
 			  driver.findElement(By.id("reg-firstname")).sendKeys("User");
 			  driver.findElement(By.id("reg-lastname")).sendKeys("Name");
 			  driver.findElement(By.id("reg-email")).sendKeys("karine.tadevosyan51@gmail.com");
@@ -44,8 +45,8 @@ public class MyFirstWebDriverTest {
 				System.out.println("Title is" +my_linkedinpage);
 				assert true;
 				System.out.println("Test complited");
-			
-	 		  
+			 
+	
 			  driver.findElement(By.id("login-email")).sendKeys("karine.tadevosyan51@gmail.com");
 			  driver.findElement(By.id("login-password")).sendKeys("pa$$word");
 			  driver.findElement(By.id("login-submit")).click();
@@ -54,7 +55,10 @@ public class MyFirstWebDriverTest {
 				System.out.println("Title is" +HomePage);
 				assert true;
 				System.out.println("Test complited");
-			  
+				
+			  /*driver.findElement(By.id("messaging-nav-item")).click();
+			  driver.findElement(By.xpath("/html/body/div[7]/div[2]/div[2]/div/div[2]/div/div[1]/div/a[1]/span/li-icon")).click();
+			  */
 				
 				driver.findElement(By.id("profile-nav-item")).click();
 				driver.findElement(By.xpath("//*[@id='nav-settings__dropdown-options']/li[1]")).click();
