@@ -5,7 +5,9 @@
     <classes>
       <class name="aca.first.test.MyFirstWebDriverTest">
         <methods>
-          <include name="signUpTest"/>
+          <include name="endSession"/>
+          <include name="basicUrl"/>
+          <include name="salaries"/>
         </methods>
       </class> <!-- aca.first.test.MyFirstWebDriverTest -->
     </classes>

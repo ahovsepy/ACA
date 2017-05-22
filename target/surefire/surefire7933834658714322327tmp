@@ -1,5 +1,5 @@
 #surefire
-#Wed Apr 26 17:48:30 AMT 2017
+#Mon May 22 15:08:36 AMT 2017
 testng.configurator=org.apache.maven.surefire.testng.conf.TestNG60Configurator
 testng.test.classpath=C\:\\Users\\StartUPX\\ACA\\target\\test-classes
 tc.0=aca.first.test.MyFirstWebDriverTest
