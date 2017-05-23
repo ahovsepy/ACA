@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 import aca.pages.BrowserFactory;
 import aca.pages.HomePage;
 import aca.pages.LoginPage;
+import aca.pages.MessagePage;
 import aca.pages.ReceiptPage;
 import aca.pages.SignUpPage;
 import aca.first.test.FunctionalTest;
@@ -142,7 +143,7 @@ Expected result: Program should be display �We just email you a link� messag
  */
 
 
-public class MyFirstWebDriverTest extends FunctionalTest {
+public class LoginTest extends FunctionalTest {
 	
 		
 	@Test
@@ -156,9 +157,15 @@ public class MyFirstWebDriverTest extends FunctionalTest {
 		
 		ReceiptPage receiptPage = loginPage.submit();
 		assertTrue(receiptPage.isInitialized());
+		
+		loginPage.clickOnNav();
+		loginPage.clickOnSignOut();
+	
+	
 	}	
 
-
+		
+	
 	@AfterMethod
 	public void cleanUp(){
 		driver.close();

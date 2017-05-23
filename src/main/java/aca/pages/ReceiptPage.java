@@ -11,6 +11,8 @@ public class ReceiptPage extends PageObject {
 	@FindBy(how=How.ID, using="inbug-nav-item")
 	private WebElement navBarIcon;
 	
+	@FindBy(how=How.ID, using="//button[@data-control-name='send']")
+	private WebElement sendButton;
 	
 		public ReceiptPage(WebDriver driver) {
 			super(driver);

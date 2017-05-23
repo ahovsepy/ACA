@@ -18,6 +18,13 @@ public class LoginPage extends PageObject{
 	@FindBy(how=How.ID, using="login-submit")
 	private WebElement submitButton;
 	
+	@FindBy(how=How.ID, using="profile-nav-item")
+	private WebElement navMeButton;
+	
+	@FindBy(how=How.XPATH, using="//a[contains(@data-control-name,'signout')]")
+	private WebElement signOutButton;
+
+	
 	public LoginPage(WebDriver driver){
 		super(driver);
 	}
@@ -36,6 +43,14 @@ public class LoginPage extends PageObject{
 		this.loginpassword.sendKeys(pass);
 		
 	}
+	public void clickOnNav(){
+		navMeButton.click();
+	}
+	
+	public void clickOnSignOut(){
+		signOutButton.click();
+	}
+	
 	public ReceiptPage submit(){
 		submitButton.click();
 		return new ReceiptPage(driver);
