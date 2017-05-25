@@ -5,13 +5,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
-import aca.pages.BrowserFactory;
-import aca.pages.HomePage;
-import aca.pages.LoginPage;
-import aca.pages.MessagePage;
-import aca.pages.ReceiptPage;
-import aca.pages.SignUpPage;
 import aca.first.test.FunctionalTest;
+import aca.pages.LoginPage;
+import aca.pages.ReceiptPage;
+
 import org.openqa.selenium.support.pagefactory.*;
 
 /*TestCase

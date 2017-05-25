@@ -16,13 +16,13 @@ public class ProfilePicturePage extends PageObject{
 	@FindBy(how=How.XPATH, using="//a[contains(@data-control-name, 'edit_top_card')]")
 	private WebElement editprofilepic;
 	
-	@FindBy(how=How.ID, using="pe-treasury-view__media-upload")
+	@FindBy(how=How.ID, using="top-card-form-edit-upload-input")
 	private WebElement addpic;
 	
-	@FindBy(how=How.XPATH, using="//div[contains(@class, 'action')]//button[@data-control-name='apply']")
+	@FindBy(how=How.XPATH, using="//button[contains(@data-control-name,'profile_photo_crop_save')]")
 	private WebElement applyButton;
 	
-	@FindBy(how=How.XPATH, using="(//button[contains(@class, 'submit')]")
+	@FindBy(how=How.XPATH, using="(//button[@type='submit'])[2]")
 	private WebElement submitButton;
 	
 	@FindBy(how=How.ID, using="profile-nav-item")
@@ -53,6 +53,7 @@ public class ProfilePicturePage extends PageObject{
 		editprofilepic.click();
 	}
 	
+	
 	public void enterAddProfilePic(String addprofpic){
 		this.addpic.clear();
 		this.addpic.sendKeys(addprofpic);
@@ -63,7 +64,7 @@ public class ProfilePicturePage extends PageObject{
 		applyButton.click();
 	}
 	
-	public void clickOnSubmit(){
+	public void clickOnDone(){
 		submitButton.click();
 
 	}

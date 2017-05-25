@@ -42,7 +42,7 @@ public class ProfilePictureTest extends FunctionalTest{
 		assertTrue(receiptPage.isInitialized());
 		
 		ProfilePicturePage profilepicturePage = new ProfilePicturePage(driver);
-		assertTrue(profilepicturePage.isInitialized());
+		//assertTrue(profilepicturePage.isInitialized());
 		
 		profilepicturePage.clickOnViewProfile();
 		profilepicturePage.clickOnProfile();
@@ -52,11 +52,11 @@ public class ProfilePictureTest extends FunctionalTest{
 		Thread.sleep(2000);
 		profilepicturePage.enterAddProfilePic("C:\\Users\\Vika\\Desktop\\image.jpg");
 		
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		profilepicturePage.clickOnApply();
 		
-		Thread.sleep(2000);
-		profilepicturePage.clickOnSubmit();
+		Thread.sleep(5000);
+		profilepicturePage.clickOnDone();
 		
 		Thread.sleep(2000);
 		profilepicturePage.clickOnNav();
