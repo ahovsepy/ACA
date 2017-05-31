@@ -2,6 +2,7 @@ package aca.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
@@ -26,9 +27,12 @@ public class AddProfileDetailsPage extends PageObject{
 	private WebElement studyname;
 	
 	@FindBy(how=How.LINK_TEXT, using="Mathematics")
+	private WebElement typingtext;
+	
+	@FindBy(how=How.LINK_TEXT, using="Mathematics")
 	private WebElement choosetext;
 	
-	@FindBy(how=How.XPATH, using="//button[@type='submit'])]")
+	@FindBy(how=How.XPATH, using="//button[@type='submit']")
 	private WebElement saveButton;
 	
 	@FindBy(how=How.ID, using="profile-nav-item")
@@ -64,17 +68,30 @@ public class AddProfileDetailsPage extends PageObject{
 	}
 	
 	
-	public void fillEducationSection(String education, String study){
+	public void fillSchoolSection(String education){
 		this.schoolname.clear();
 		this.schoolname.sendKeys(education);
 		
+	}
+	
+	public void fillStudySection(String study){	
 		this.studyname.clear();
 		this.studyname.sendKeys(study);
-	}	
 	
-	public void clickOnText(){
-		choosetext.click();
+		
+		Actions action = new Actions(driver);
+		action.moveToElement(typingtext);
+		
+		
+		action.moveToElement(choosetext);
+		
+		
+		//choosetext.click();
 	}
+	
+/*	public void clickOnText(){
+		choosetext.click();
+	}*/
 		
 	
 	public void clickOnSave(){

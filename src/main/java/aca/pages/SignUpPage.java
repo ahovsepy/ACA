@@ -1,10 +1,16 @@
 package aca.pages;
 
+import java.util.Random;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 
 public class SignUpPage extends PageObject {
+	
+	Random randomGenerator = new Random();
+	char randomLetter = (char) ('a' + Math.random() * ('z'-'a' + 1));
+	
 
 	@FindBy(id="reg-firstname")
 	private WebElement firstName;
@@ -13,13 +19,23 @@ public class SignUpPage extends PageObject {
 	private WebElement lastName;
 
 	@FindBy(id="reg-email")
-	private WebElement address;
+	private WebElement regemail;
 
 	@FindBy(id="reg-password")
 	private WebElement password;
 	
 	@FindBy(id="registration-submit")
 	private WebElement submitButton;
+	
+	@FindBy(how=How.ID, using="inbug-nav-item")
+	private WebElement logoButton;
+	
+	@FindBy(how=How.ID, using="profile-nav-item")
+	private WebElement navMeButton;
+	
+	@FindBy(how=How.XPATH, using="//a[contains(@data-control-name,'signout')]")
+	private WebElement signOutButton;
+
 
 	public SignUpPage(WebDriver driver) {
 		super(driver);
@@ -29,16 +45,64 @@ public class SignUpPage extends PageObject {
 		return firstName.isDisplayed();
 	}
 	
-	public void enterName(String firstName, String lastName){
+	
+	public void enterName1(){
+		this.firstName.clear();
+		char randomLetter = (char) ('a' + Math.random() * ('z'-'a' + 1));
+		firstName.sendKeys("User"+ randomLetter);
+	}
+		
+		public void enterName2(){
+		this.lastName.clear();
+		char randomLetter = (char) ('a' + Math.random() * ('z'-'a' + 1));
+		lastName.sendKeys("Name"+ randomLetter);
+		
+	}	
+		
+		public void enterEmail(){
+			this.regemail.clear();  
+			char randomLetter = (char) ('a' + Math.random() * ('z'-'a' + 1));
+			regemail.sendKeys("username"+randomLetter+"@gmail.com");
+			
+		}
+		
+		public void enterPass(){
+			this.password.clear();
+			char randomLetter = (char) ('a' + Math.random() * ('z'-'a' + 1));   
+			password.sendKeys("pa$$word"+ randomLetter);
+			
+		}	
+		
+		public void clickOnJoin(){
+			submitButton.click();
+			
+			
+		}
+		
+		public void clickonLogo(){
+			logoButton.click();
+		}
+		
+		public void clickOnNav(){
+			navMeButton.click();
+		}
+		
+		public void clickOnSignOut(){
+			signOutButton.click();
+		}
+		
+		
+	
+	/*public void enterName(String firstName, String lastName){
 		this.firstName.clear();
 		this.firstName.sendKeys(firstName);
 
 		this.lastName.clear();
 		this.lastName.sendKeys(lastName);
 		
-	}
-	public ReceiptPage submit(){
-		submitButton.click();
+	}*/
+	public ReceiptPage logo(){
+		logoButton.click();
 		return new ReceiptPage(driver);
 	}
 
