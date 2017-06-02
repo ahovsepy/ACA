@@ -1,10 +1,14 @@
 package aca.pages;
 
+import java.util.List;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.ui.Select;
 
 public class AddProfileDetailsPage extends PageObject{
 	
@@ -27,11 +31,8 @@ public class AddProfileDetailsPage extends PageObject{
 	private WebElement studyname;
 	
 	@FindBy(how=How.LINK_TEXT, using="Mathematics")
-	private WebElement typingtext;
-	
-	@FindBy(how=How.LINK_TEXT, using="Mathematics")
-	private WebElement choosetext;
-	
+	private WebElement select;
+
 	@FindBy(how=How.XPATH, using="//button[@type='submit']")
 	private WebElement saveButton;
 	
@@ -77,22 +78,19 @@ public class AddProfileDetailsPage extends PageObject{
 	public void fillStudySection(String study){	
 		this.studyname.clear();
 		this.studyname.sendKeys(study);
-	
 		
-		Actions action = new Actions(driver);
-		action.moveToElement(typingtext);
-		
-		
-		action.moveToElement(choosetext);
-		
-		
-		//choosetext.click();
 	}
-	
-/*	public void clickOnText(){
-		choosetext.click();
-	}*/
+	public void selection(){
+		Select dropdown = new Select(driver.findElement(By.linkText("Mathematics")));
+		dropdown.selectByVisibleText("Mathematics");
 		
+	}
+	/*public void selection(){
+		;
+		oSelect.selectByVisibleText("Mathematics");
+		select.click();
+	}*/
+	
 	
 	public void clickOnSave(){
 		saveButton.click();
