@@ -1,29 +1,28 @@
 package aca.first.test;
 
 import static org.junit.Assert.assertTrue;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 import aca.pages.AddProfileDetailsPage;
 import aca.pages.LoginPage;
 import aca.pages.ReceiptPage;
-import aca.pages.*;
+
 
 /*Test Case
- Test Case 07
-
-Description: Edit and add User details (work experiance, education, etc).
-Steps
-1. Navigate to www.linkedIn.com;
-2. Enter Email address;
-3. Enter password;
-4. Click "Sign In" button and open Home Page
-5. Click on "Me" button and "View Profile";
-6. Navigate to "Add new profile section", click on appropriate field;
-7. Complete fields and click "Save" button;
-8. Click "Sign out" button
-Expected result: All fill details should be show in User profile list.
+ 
+Test Case 07
+Title: Add user additional information.
+Description: Add some additional personal information about user education.
+Steps:
+1. Navigate to www.linkedin.com;
+2. Enter valid email address in Email field;
+3. Enter valid password in Password field;
+4. Click "Sign In" button;
+5. Click on "Me" button and choose from list "View Profile" link;
+6. Navigate to "Add new profile section", click on “Education” link;
+7. Complete some fields and click "Save" button;
+8. Click on "Me" button, choose in list "Sign out" button and click on it.
+Expected result: After filling information, all new information should be show in User profile.
  */
 
 public class AddProfileDetailsTest extends FunctionalTest{
@@ -55,9 +54,9 @@ public class AddProfileDetailsTest extends FunctionalTest{
 		Thread.sleep(2000);
 		addprofiledetailsPage.fillSchoolSection("Base College of SEUA");
 		addprofiledetailsPage.fillStudySection("Mathematics");
-		Thread.sleep(2000);
-		addprofiledetailsPage.selection();
+		Thread.sleep(3000);
 		
+		addprofiledetailsPage.addelement();
 		
 		Thread.sleep(2000);
 		addprofiledetailsPage.clickOnSave();

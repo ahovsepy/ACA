@@ -19,11 +19,11 @@ public class FindColleaguePage extends PageObject{
 	@FindBy(how=How.PARTIAL_LINK_TEXT, using="Viktorya Karamyan")
 	private WebElement user;
 	
-	@FindBy(how=How.XPATH, using="//a[contains(@data-tracking-control-name, 'pp_reg_upsell_view_full')]")
+	/*@FindBy(how=How.XPATH, using="//a[contains(@data-tracking-control-name, 'pp_reg_upsell_view_full')]")
 	private WebElement viewfullprofile;
 	
 	@FindBy(how=How.XPATH, using="//a[@class='sign-in-link']")
-	private WebElement signInButton;
+	private WebElement signInButton;*/
 	
 	@FindBy(how=How.ID, using="session_key-login")
 	private WebElement sessionlogin;
@@ -68,13 +68,13 @@ public class FindColleaguePage extends PageObject{
 		user.click();
 	}
 	
-	public void clickOnView(){
+	/*public void clickOnView(){
 		viewfullprofile.click();
 	}
 	
 	public void clickOnSign(){
 		signInButton.click();
-	}
+	}*/
 	
 	public void enterSessionCredentails(String email, String password){
 		this.sessionlogin.clear();

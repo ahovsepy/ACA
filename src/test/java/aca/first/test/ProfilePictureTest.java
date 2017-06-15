@@ -10,20 +10,21 @@ import aca.pages.ReceiptPage;
 
 
 /*Test Case
- Test Case 06
+ 
+Test Case 06
+Title: Attach picture to user profile.
+Description: Verifying attach image, which should be able displaying in user profile picture.
+Steps:
+1. Navigate to www.linkedin.com;
+2. Enter valid email address in Email field;
+3. Enter valid password in Password field;
+4. Click "Sign In" button;
+5. Click on "Me" button and choose in list "View Profile" link;
+6. Click on “Edit” pen button and find from PC directory appropriate image;
+7. Click on “Apply” button and save your attach;
+8. Click on "Me" button, choose in list "Sign out" button and click on it.
 
-Description: Attach image to User Profile.
-Steps
-1. Navigate to www.linkedIn.com;
-2. Enter Email address;
-3. Enter password;
-4. Click "Sign In" button and open Home Page
-5. Click on "Me" button and "View Profile";
-6. Click on Edit pen button and find from  directory appropriate image;
-7. Click on Apply button and save your attach;
-8. Click "Sign out" button
-Expected result: Image must be attach on User Profile.
-
+Expected result: Image must be attached and showed on user profile picture.
  */
 
 public class ProfilePictureTest extends FunctionalTest{

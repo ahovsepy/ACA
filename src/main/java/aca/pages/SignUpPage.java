@@ -24,7 +24,13 @@ public class SignUpPage extends PageObject {
 	@FindBy(id="reg-password")
 	private WebElement password;
 	
-	@FindBy(id="registration-submit")
+	@FindBy(how=How.ID, using="login-email") 
+	private WebElement loginemail;
+	
+	@FindBy(how=How.ID, using="login-password")
+	private WebElement loginpassword;
+	
+	@FindBy(how=How.ID, using="login-submit")
 	private WebElement submitButton;
 	
 	@FindBy(how=How.ID, using="inbug-nav-item")
@@ -61,8 +67,7 @@ public class SignUpPage extends PageObject {
 		
 		public void enterEmail(){
 			this.regemail.clear();  
-			char randomLetter = (char) ('a' + Math.random() * ('z'-'a' + 1));
-			regemail.sendKeys("username"+randomLetter+"@gmail.com");
+			regemail.sendKeys("karine.tadevosyan51@gmail.com");
 			
 		}
 		
@@ -73,10 +78,17 @@ public class SignUpPage extends PageObject {
 			
 		}	
 		
-		public void clickOnJoin(){
+		public void enterCredentails(String email, String pass){
+			this.loginemail.clear();
+			this.loginemail.sendKeys(email);
+			
+			this.loginpassword.clear();
+			this.loginpassword.sendKeys(pass);
+			
+		}
+		
+		public void submit(){
 			submitButton.click();
-			
-			
 		}
 		
 		public void clickonLogo(){

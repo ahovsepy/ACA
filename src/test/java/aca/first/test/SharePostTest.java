@@ -1,29 +1,26 @@
 package aca.first.test;
 
 import static org.junit.Assert.assertTrue;
-
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
-
 import aca.pages.LoginPage;
 import aca.pages.ReceiptPage;
-import aca.pages.SearchPage;
 import aca.pages.SharePostPage;
 
 /*Test Case
-
+ 
 Test Case 05
-Description: Share posts.
-Steps
-1. Navigate to www.linkedIn.com;
-2. Enter Email address;
-3. Enter password;
-4. Click "Sign In" button and open Home Page
-5. Find first post, click on "Share button"
-6. Open window with share information, click "Post" button;
-7. Click "Sign out" button
-Expected result: Share post must be show on your post list
-
+Title: Share posts from user news feed
+Description:  Verified posts sharing and displaying in user news feed list.
+Steps:
+1. Navigate to www.linkedin.com;
+2. Enter valid email address in Email field;
+3. Enter valid password in Password field;
+4. Click "Sign In" button;
+5. Find first post, click on "Share” button;
+6. Window opens with news information, click "Post" button;
+7. Click on "Me" button, choose in list "Sign out" button and click on it.
+Expected result: After click on "Post" button showed “Post successful” message. News, which shared, must displayed in user news list.
  */
 
 

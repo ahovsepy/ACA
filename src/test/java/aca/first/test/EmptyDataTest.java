@@ -4,6 +4,18 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 import aca.pages.EmptyDataPage;
 
+/*Test Case
+
+Test Case 10
+Title: Empty fields for login
+Description: Verifying login, when login credentials is empty (email and password).
+Steps:
+1. Not fill both of fields for login (email and password);
+2. Click on “Sign in” button;
+Expected result: “Sign in” button must be inactive.
+ */
+
+
 public class EmptyDataTest extends FunctionalTest {
 
 	@Test

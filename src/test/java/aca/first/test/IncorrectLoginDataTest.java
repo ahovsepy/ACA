@@ -5,6 +5,18 @@ import org.testng.annotations.Test;
 
 import aca.pages.IncorrectLoginDataPage;
 
+/*Test Case
+
+Test Case 13
+Title: Invalid credentials for login (email and password)
+Description: Verifying login, when both of credentials entering wrong.
+Steps:
+1. Enter invalid email address in Email field;
+2. Enter invalid password in Password field;
+3. Click on “Sign in” button.
+Expected result: After click on “Sign in” button, system must be clear both of login credentials field.
+ */
+
 public class IncorrectLoginDataTest extends FunctionalTest{
 	
 	@Test

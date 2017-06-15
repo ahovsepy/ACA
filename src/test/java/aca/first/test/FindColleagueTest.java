@@ -6,18 +6,20 @@ import aca.pages.FindColleaguePage;
 
 
 /*Test Case
-Test Case 09
-Description: Searching people in webpage without login in 
-Steps
-1. Navigate to LinkedIn.com
-2. Fill in “Find a colleague” fields where must be fill First and Last name;
+
+Test Case 08
+Title: Searching people from “Mainpage”
+Description: Verifying search people from “Mainpage”. Find user and view profile searched user after logged in system. 
+Steps:
+1 Navigate to LinkedIn.com;
+2. Type searched user name and surname in “Find a colleague” fields;
 3. Click on “Search” button;
-4. Click on appropriate User name;
-5. Click on "View User full profile";
-6. Click on SignIn button;
-7. Fill valid email and password;
-8. Click on Signin
-Expected result: Webpage should be searching result display, in particular user profile page.
+4. Click on appropriate user;
+5. Click on "View User`s full profile";
+6. Click on “Sign in” button;
+7. Enter your valid login credentials;
+8. Click on “Sign in” button;
+9. Click on "Me" button, choose in list "Sign out" button and click on it.Expected result: System should be searching correct users with required request. After searching results, find needed user and view user profile.
  */
 
 public class FindColleagueTest extends FunctionalTest{
@@ -34,11 +36,11 @@ public class FindColleagueTest extends FunctionalTest{
 		Thread.sleep(2000);
 		findcolleaguePage.clickOnUser();
 		
-		Thread.sleep(2000);
+		/*Thread.sleep(2000);
 		findcolleaguePage.clickOnView();
 		
 		Thread.sleep(2000);
-		findcolleaguePage.clickOnSign();
+		findcolleaguePage.clickOnSign();*/
 		
 		Thread.sleep(2000);
 		findcolleaguePage.enterSessionCredentails("karine.tadevosyan51@gmail.com", "pa$$word");

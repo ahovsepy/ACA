@@ -1,20 +1,19 @@
 package aca.pages;
 
+import java.util.List;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+
 
 public class SearchPage extends PageObject{
 	
 	@FindBy(how=How.XPATH, using="//input[contains(@placeholder,'Search')]") 
 	private WebElement searchpeople;
 	
-	@FindBy(how=How.XPATH, using="//button[@data-control-name='nav.search_button']")
-	private WebElement entersearch;
-	
-	@FindBy(how=How.XPATH, using="/html/body/div[5]/div[2]/div[2]/div/div[4]/div/div/div/div/ul/li[1]/div/div/div[2]/a/h3")
-	private WebElement navpeople;
+	@FindBy(how=How.XPATH, using="//div[contains(@class, 'type-ahead-theme-primary')]/ul/li")
+	List <WebElement> allElements;
 	
 	@FindBy(how=How.XPATH, using="//button[@class='connect primary top-card-action ember-view']")
 	private WebElement connectButton;
@@ -38,18 +37,14 @@ public class SearchPage extends PageObject{
 		return searchpeople.isDisplayed();
 	}
 	
-	public void enterSearchPeople(String search){
+	public void searchName(String search){
 		this.searchpeople.clear();
 		this.searchpeople.sendKeys(search);
 		
 	}
 	
-	public void clickOnSearch(){
-		entersearch.click();
-	}
-	
 	public void clickOnPeople(){
-		navpeople.click();
+		allElements.get(0).click();
 
 	}
 	

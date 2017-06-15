@@ -1,26 +1,29 @@
 package aca.first.test;
 
 import static org.junit.Assert.assertTrue;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 import aca.pages.LoginPage;
-import aca.pages.MessagePage;
 import aca.pages.ReceiptPage;
 import aca.pages.SearchPage;
 
 /*Test Case
-
 Test Case 04
-Description: Searching people in webpage and send invitation for connecting.
+Title: Sending connect invitation to user
+Description: Looking for people in “Search” box, find user and send invitation to found user for connect.
 Steps:
-1. Navigate to www.linkedIn.com;
-2. Enter Email address;
-3. Enter password;
-4. Click "Sign In" button and open Home Page
-5. Type people name/last name in Search field and click Enter;
-6. Found appropriate person and click Connect button after that click Send button;
-7. Click "Sign out" button
-Expected Result: Invitation should be send and recipient must be receive message in "My Network" field.
+1. Navigate to www.linkedin.com;
+2. Enter valid email address in Email field;
+3. Enter valid password in Password field;
+4. Click "Sign In" button;
+5. Type people name/surname in “Search” box on icons panel and click enter;
+6. Found appropriate person and click “Connect” button, after that click Send button;
+7. Click on "Me" button, choose in list "Sign out" button and click on it.
+Expected result: Invitation should be send, as a result displayed message “Your invitation was sent”.
  */
 
 
@@ -42,9 +45,7 @@ public class SearchTest extends FunctionalTest{
 		
 		SearchPage searchPage = new SearchPage(driver);
 		assertTrue(searchPage.isInitialized());
-		searchPage.enterSearchPeople("Albert Karamyan");
-		
-		searchPage.clickOnSearch();
+		searchPage.searchName("Simple Tester");
 		Thread.sleep(2000);
 		searchPage.clickOnPeople();
 		Thread.sleep(2000);

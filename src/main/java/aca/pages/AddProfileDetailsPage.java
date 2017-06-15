@@ -30,10 +30,10 @@ public class AddProfileDetailsPage extends PageObject{
 	@FindBy(how=How.XPATH, using="//input[@name='fieldOfStudy']")
 	private WebElement studyname;
 	
-	@FindBy(how=How.LINK_TEXT, using="Mathematics")
-	private WebElement select;
-
-	@FindBy(how=How.XPATH, using="//button[@type='submit']")
+	@FindBy(how=How.XPATH, using="//div[contains(@class, 'type-ahead-theme-secondary')]/ul/li")
+	List <WebElement> studyElements;
+	
+	@FindBy(how=How.XPATH, using="(//button[@type='submit'])[2]")
 	private WebElement saveButton;
 	
 	@FindBy(how=How.ID, using="profile-nav-item")
@@ -80,16 +80,11 @@ public class AddProfileDetailsPage extends PageObject{
 		this.studyname.sendKeys(study);
 		
 	}
-	public void selection(){
-		Select dropdown = new Select(driver.findElement(By.linkText("Mathematics")));
-		dropdown.selectByVisibleText("Mathematics");
-		
+	
+	
+	public  void addelement() {
+		studyElements.get(0).click();
 	}
-	/*public void selection(){
-		;
-		oSelect.selectByVisibleText("Mathematics");
-		select.click();
-	}*/
 	
 	
 	public void clickOnSave(){

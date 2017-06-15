@@ -2,8 +2,19 @@ package aca.first.test;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
-import aca.pages.IncorrectEmailPage;
 import aca.pages.IncorrectPassPage;
+
+/*Test Case
+
+Test Case 12
+Title: Login with incorrect password
+Description: Verifying login, when typing correct email address, but incorrect password.
+Steps:
+1. Enter valid email address in Email field;
+2. Enter invalid password in Password field;
+3. Click on “Sign in” button.
+Expected result: After click on “Sign in” button, system must be clear both of login credentials field.
+ */
 
 public class IncorrectPassTest extends FunctionalTest {
 	

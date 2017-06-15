@@ -1,26 +1,24 @@
 package aca.first.test;
 
 import static org.junit.Assert.assertTrue;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 import aca.first.test.FunctionalTest;
 import aca.pages.LoginPage;
 import aca.pages.ReceiptPage;
 
-import org.openqa.selenium.support.pagefactory.*;
-
 /*TestCase
+
 Test Case 02
-Description: Login on www.linkedIn.com
+Title:  Login with entering valid credentials (email and password).
+Description: Verification to login with entering valid user credentials.
 Steps:
-1. Navigate to www.linkedIn.com;
-2. Enter Email address;
-3. Enter password;
-4. Click "Sign In" button and open Home Page
-5. Click "Sign out" button
-Expected Result: Page should be able to open successfully, displaying the linkedIn user`s home page.
+1. Navigate to www.linkedin.com;
+2. Enter valid email address in Email field;
+3. Enter valid password in Password field;
+4. Click "Sign In" button and open “Homepage”;
+5. Click on "Me" button, choose in list "Sign out" button and click on it.
+Expected result: System verifies user email and password if both are valid, then user should be logged successfully. In addition user must see "Mainpage” after sign out.
  */
 
 

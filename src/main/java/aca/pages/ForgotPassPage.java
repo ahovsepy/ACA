@@ -77,7 +77,7 @@ public class ForgotPassPage extends PageObject{
 	}
 
 	public boolean isInitialized() {
-		return submitButton.isDisplayed();
+		return email.isDisplayed();
 	}
 	
 	

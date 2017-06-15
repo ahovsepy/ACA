@@ -9,18 +9,21 @@ import aca.pages.ReceiptPage;
 
 /*Test Case
 Test Case 03
-Description: Verifying messaging functions.
+Title: Messaging
+Description: Verifying message functionality.
 Steps:
-1. Navigate to www.linkedIn.com;
-2. Enter Email address;
-3. Enter password;
-4. Click "Sign In" button and open Home Page
-5. Click on Messaging button, click on compose message button;
-6. Type name or multiple names in appropriate field;
-7. Type message or attached file in message box field;
-8. Click on "Send" button
-9. Click "Sign out" button
-Expected Result: Message should be send and recipient must be get a message.*/
+1. Navigate to www.linkedin.com;
+2. Enter valid email address in Email field;
+3. Enter valid password in Password field;
+4. Click "Sign In" button;
+5. Click on “Messaging” button on icons panel;
+6. Click on compose message button;
+7. Type recipient name in appropriate field;
+8. Type message text in message text box;
+9. Click on "Send" button;
+10. Click on "Me" button, choose in list "Sign out" button and click on it.
+Expected result:  After click on send button, in message sending window should be displaying text, which user sent to recipient. 
+*/
 
 
 public class MessageTest extends FunctionalTest {
@@ -56,12 +59,6 @@ public class MessageTest extends FunctionalTest {
 		
 		Thread.sleep(2000);
 		messagePage.clickOnSignOut();
-		
-		
-		/*
-		ReceiptPage receiptPage = messagePage.send();
-		assertTrue(receiptPage.isInitialized());*/
-		
 		
 	}	
 	
