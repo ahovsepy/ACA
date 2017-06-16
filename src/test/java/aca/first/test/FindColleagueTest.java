@@ -36,11 +36,11 @@ public class FindColleagueTest extends FunctionalTest{
 		Thread.sleep(2000);
 		findcolleaguePage.clickOnUser();
 		
-		/*Thread.sleep(2000);
+		Thread.sleep(2000);
 		findcolleaguePage.clickOnView();
 		
 		Thread.sleep(2000);
-		findcolleaguePage.clickOnSign();*/
+		findcolleaguePage.clickOnSign();
 		
 		Thread.sleep(2000);
 		findcolleaguePage.enterSessionCredentails("karine.tadevosyan51@gmail.com", "pa$$word");
