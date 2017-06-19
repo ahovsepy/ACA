@@ -22,11 +22,11 @@ public class IncorrectEmailTest extends FunctionalTest{
 	
 	@Test
 	public void WrongEmail ()throws InterruptedException{
-		driver.get("https://www.linkedin.com");
+		driver.get(url);
 
 		IncorrectEmailPage incorrectemailPage = new IncorrectEmailPage(driver);
 		try{
-			incorrectemailPage.enterCredentials("WrongEmailAddress", "pa$$word");
+			incorrectemailPage.enterCredentials("WrongEmailAddress", password);
 			incorrectemailPage.clickOnSignIn();
 			Thread.sleep(2000);
 			if(incorrectemailPage != null) 

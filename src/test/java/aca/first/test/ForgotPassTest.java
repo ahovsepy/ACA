@@ -36,26 +36,26 @@ public class ForgotPassTest extends FunctionalTest{
 	
 	@Test
 	public void ForgotPass()throws InterruptedException{
-		driver.get("https://www.linkedin.com");
+		driver.get(url);
 	
 		ForgotPassPage forgotpassPage = new ForgotPassPage(driver);
 		assertTrue(forgotpassPage.isInitialized());
-		forgotpassPage.enterEmail("karine.tadevosyan51@gmail.com");
+		forgotpassPage.enterEmail(email);
 	
 		
 		forgotpassPage.forgotPass();
 		Thread.sleep(2000);
-		forgotpassPage.reenterEmail("karine.tadevosyan51@gmail.com");
+		forgotpassPage.reenterEmail(email);
 		Thread.sleep(2000);
 		forgotpassPage.Submit();
 
 		
-		driver.get("https://www.gmail.com");
+		driver.get(url1);
 		
-		forgotpassPage.entergmailEmail("karine.tadevosyan51@gmail.com");
+		forgotpassPage.entergmailEmail(email);
 		forgotpassPage.nextButton();
 		Thread.sleep(2000);
-		forgotpassPage.entergmailPass("mamaforever");
+		forgotpassPage.entergmailPass(password1);
 		forgotpassPage.next1Button();
 		Thread.sleep(2000);
 		forgotpassPage.clickOnUnreadMessage();
@@ -69,8 +69,8 @@ public class ForgotPassTest extends FunctionalTest{
 		
 		
 		Thread.sleep(2000);
-		forgotpassPage.typenewPass("pa$$word");
-		forgotpassPage.typeconfirmnewPass("pa$$word");
+		forgotpassPage.typenewPass(password);
+		forgotpassPage.typeconfirmnewPass(password);
 		forgotpassPage.clickOnSaveButton();
 		Thread.sleep(2000);
 		forgotpassPage.clickOnBackHomeButton();
@@ -78,7 +78,7 @@ public class ForgotPassTest extends FunctionalTest{
 		forgotpassPage.clickOnNav();
 		forgotpassPage.clickOnSignOut();
 		Thread.sleep(2000);
-		forgotpassPage.enterCredentails("karine.tadevosyan51@gmail.com", "pa$$word");
+		forgotpassPage.enterCredentails(email, password);
 		forgotpassPage.submitButton1();
 		Thread.sleep(2000);
 		forgotpassPage.clickOnNav();

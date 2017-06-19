@@ -26,7 +26,7 @@ public class FindColleagueTest extends FunctionalTest{
 	
 	@Test
 	public void ViewOTherUser ()throws InterruptedException{
-		driver.get("https://www.linkedin.com");
+		driver.get(url);
 		
 		FindColleaguePage findcolleaguePage = new FindColleaguePage(driver);
 		findcolleaguePage.enterSearchCredentails("Viktorya", "Karamyan");
@@ -43,7 +43,7 @@ public class FindColleagueTest extends FunctionalTest{
 		findcolleaguePage.clickOnSign();
 		
 		Thread.sleep(2000);
-		findcolleaguePage.enterSessionCredentails("karine.tadevosyan51@gmail.com", "pa$$word");
+		findcolleaguePage.enterSessionCredentails(email, password);
 		
 		findcolleaguePage.clickOnSubmit();
 		

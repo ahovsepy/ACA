@@ -26,7 +26,7 @@ public class SignUpTest extends FunctionalTest{
 	
 	@Test
 	public void Registration ()throws InterruptedException{
-		driver.get("https://www.linkedin.com");
+		driver.get(url);
 	
 		SignUpPage signUpPage = new SignUpPage(driver);
 		assertTrue(signUpPage.isInitialized());
@@ -35,7 +35,7 @@ public class SignUpTest extends FunctionalTest{
 		signUpPage.enterEmail();
 		signUpPage.enterPass();
 		Thread.sleep(2000);
-		signUpPage.enterCredentails("karine.tadevosyan51@gmail.com", "pa$$word");
+		signUpPage.enterCredentails(email, password);
 		signUpPage.submit();
 		Thread.sleep(2000);
 		signUpPage.clickonLogo();

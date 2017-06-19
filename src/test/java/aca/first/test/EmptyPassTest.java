@@ -20,12 +20,12 @@ public class EmptyPassTest extends FunctionalTest{
 	
 	@Test
 	public void EmptyPass ()throws InterruptedException{
-		driver.get("https://www.linkedin.com");
+		driver.get(url);
 
 		EmptyPassPage emptypassPage = new EmptyPassPage(driver);
 		try
 		{
-			emptypassPage.enterCredentials("karine.tadevosyan51@gmail.com");
+			emptypassPage.enterCredentials(email);
 			emptypassPage.clickOnSignIn();
 			if(emptypassPage.equals("Login was failed"))
 			{

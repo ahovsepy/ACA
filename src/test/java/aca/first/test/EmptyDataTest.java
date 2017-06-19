@@ -20,7 +20,7 @@ public class EmptyDataTest extends FunctionalTest {
 
 	@Test
 	public void EmptyData ()throws InterruptedException{
-		driver.get("https://www.linkedin.com");
+		driver.get(url);
 	
 		
 		EmptyDataPage emptydataPage = new EmptyDataPage(driver);

@@ -21,11 +21,11 @@ public class IncorrectPassTest extends FunctionalTest {
 
 	@Test
 	public void WrongPassword ()throws InterruptedException{
-		driver.get("https://www.linkedin.com");
+		driver.get(url);
 
 		IncorrectPassPage incorrectpassPage = new IncorrectPassPage(driver);
 		try{
-			incorrectpassPage.enterCredentials("karine.tadevosyan51@gmail.com", "wrongpass");
+			incorrectpassPage.enterCredentials(email, "wrongpass");
 			incorrectpassPage.clickOnSignIn();
 			Thread.sleep(2000);
 			 if(incorrectpassPage.equals("Incorrect Password"))

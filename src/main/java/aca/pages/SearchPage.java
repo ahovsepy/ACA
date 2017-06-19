@@ -10,7 +10,7 @@ import org.openqa.selenium.support.How;
 public class SearchPage extends PageObject{
 	
 	@FindBy(how=How.XPATH, using="//input[contains(@placeholder,'Search')]") 
-	private WebElement searchpeople;
+	public WebElement searchpeople;
 	
 	@FindBy(how=How.XPATH, using="//div[contains(@class, 'type-ahead-theme-primary')]/ul/li")
 	List <WebElement> allElements;

@@ -28,12 +28,12 @@ public class SharePostTest extends FunctionalTest {
 	
 	@Test
 	public void Sharing ()throws InterruptedException{
-		driver.get("https://www.linkedin.com");
+		driver.get(url);
 		
 		
 		LoginPage loginPage = new LoginPage(driver);
 		assertTrue(loginPage.isInitialized());
-		loginPage.enterCredentails("karine.tadevosyan51@gmail.com", "pa$$word");
+		loginPage.enterCredentails(email, password);
 		
 		ReceiptPage receiptPage = loginPage.submit();
 		assertTrue(receiptPage.isInitialized());

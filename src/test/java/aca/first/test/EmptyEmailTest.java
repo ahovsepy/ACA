@@ -20,13 +20,13 @@ public class EmptyEmailTest extends FunctionalTest{
 	
 	@Test
 	public void EmptyEmail ()throws InterruptedException{
-		driver.get("https://www.linkedin.com");
+		driver.get(url);
 
 		EmptyEmailPage emptyemailPage = new EmptyEmailPage(driver);
 
 		try
 		{
-			emptyemailPage.enterCredentials("pa$$word");
+			emptyemailPage.enterCredentials(password);
 			emptyemailPage.clickOnSignIn();
 			if(emptyemailPage.equals("Login was failed"))
 			{

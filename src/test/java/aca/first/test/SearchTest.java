@@ -1,10 +1,6 @@
 package aca.first.test;
 
 import static org.junit.Assert.assertTrue;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 import aca.pages.LoginPage;
@@ -33,27 +29,31 @@ public class SearchTest extends FunctionalTest{
 	
 	@Test
 	public void ConnectUser ()throws InterruptedException{
-		driver.get("https://www.linkedin.com");
+		driver.get(url);
 		
 		
 		LoginPage loginPage = new LoginPage(driver);
 		assertTrue(loginPage.isInitialized());
-		loginPage.enterCredentails("karine.tadevosyan51@gmail.com", "pa$$word");
+		loginPage.enterCredentails(email, password);
 		
 		ReceiptPage receiptPage = loginPage.submit();
 		assertTrue(receiptPage.isInitialized());
 		
 		SearchPage searchPage = new SearchPage(driver);
 		assertTrue(searchPage.isInitialized());
+		
 		searchPage.searchName("Simple Tester");
 		Thread.sleep(2000);
+		
 		searchPage.clickOnPeople();
 		Thread.sleep(2000);
+		
 		searchPage.clickOnConnect();
 		searchPage.clickOnSendInvent();
 		
 		Thread.sleep(2000);
 		searchPage.clickOnNav();
+		
 		Thread.sleep(2000);
 		searchPage.clickOnSignOut();
 	

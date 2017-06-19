@@ -27,12 +27,10 @@ public class LoginTest extends FunctionalTest {
 		
 	@Test
 	public void LogIn()throws InterruptedException{
-		driver.get("https://www.linkedin.com");
-		
-		
+		driver.get(url);
 		LoginPage loginPage = new LoginPage(driver);
 		assertTrue(loginPage.isInitialized());
-		loginPage.enterCredentails("karine.tadevosyan51@gmail.com", "pa$$word");
+		loginPage.enterCredentails(email, password);
 		
 		ReceiptPage receiptPage = loginPage.submit();
 		assertTrue(receiptPage.isInitialized());
@@ -40,11 +38,8 @@ public class LoginTest extends FunctionalTest {
 		loginPage.clickOnNav();
 		loginPage.clickOnSignOut();
 	
-	
-	}	
+	}
 
-		
-	
 	@AfterMethod
 	public void cleanUp(){
 		driver.close();

@@ -7,7 +7,6 @@ import aca.pages.AddProfileDetailsPage;
 import aca.pages.LoginPage;
 import aca.pages.ReceiptPage;
 
-
 /*Test Case
  
 Test Case 07
@@ -30,12 +29,12 @@ public class AddProfileDetailsTest extends FunctionalTest{
 
 	@Test
 	public void AddEducation ()throws InterruptedException{
-		driver.get("https://www.linkedin.com");
+		driver.get(url);
 		
 		
 		LoginPage loginPage = new LoginPage(driver);
 		assertTrue(loginPage.isInitialized());
-		loginPage.enterCredentails("karine.tadevosyan51@gmail.com", "pa$$word");
+		loginPage.enterCredentails(email, password);
 		
 		ReceiptPage receiptPage = loginPage.submit();
 		assertTrue(receiptPage.isInitialized());
@@ -46,24 +45,26 @@ public class AddProfileDetailsTest extends FunctionalTest{
 		Thread.sleep(2000);
 		addprofiledetailsPage.clickOnProfileNav();
 		addprofiledetailsPage.clickOnNavSettings();
+		
 		Thread.sleep(2000);
 		addprofiledetailsPage.clickOnAddSection();
+		
 		Thread.sleep(2000);
 		addprofiledetailsPage.clickOnEducation();
 		
 		Thread.sleep(2000);
 		addprofiledetailsPage.fillSchoolSection("Base College of SEUA");
 		addprofiledetailsPage.fillStudySection("Mathematics");
-		Thread.sleep(3000);
 		
+		Thread.sleep(2000);
 		addprofiledetailsPage.addelement();
 		
 		Thread.sleep(2000);
 		addprofiledetailsPage.clickOnSave();
 		
-		
 		Thread.sleep(2000);
 		addprofiledetailsPage.clickOnNav();
+		
 		Thread.sleep(2000);
 		addprofiledetailsPage.clickOnSignOut();
 

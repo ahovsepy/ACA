@@ -21,7 +21,7 @@ public class IncorrectLoginDataTest extends FunctionalTest{
 	
 	@Test
 	public void IncorrectData ()throws InterruptedException{
-		driver.get("https://www.linkedin.com");
+		driver.get(url);
 		
 		IncorrectLoginDataPage incorrectlogindataPage = new IncorrectLoginDataPage(driver);
 		try{
