@@ -1,12 +1,10 @@
 package aca.first.test;
 
-import static org.junit.Assert.assertTrue;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
-import aca.pages.LoginPage;
 import aca.pages.ProfilePicturePage;
-import aca.pages.ReceiptPage;
+
 
 
 /*Test Case
@@ -32,18 +30,10 @@ public class ProfilePictureTest extends FunctionalTest{
 	
 	@Test
 	public void AddProfileImage ()throws InterruptedException{
-		driver.get(url);
-		
-		
-		LoginPage loginPage = new LoginPage(driver);
-		assertTrue(loginPage.isInitialized());
-		loginPage.enterCredentails(email, password);
-		
-		ReceiptPage receiptPage = loginPage.submit();
-		assertTrue(receiptPage.isInitialized());
+		SignIn(driver);
 		
 		ProfilePicturePage profilepicturePage = new ProfilePicturePage(driver);
-		//assertTrue(profilepicturePage.isInitialized());
+		
 		
 		profilepicturePage.clickOnViewProfile();
 		profilepicturePage.clickOnProfile();
@@ -60,10 +50,8 @@ public class ProfilePictureTest extends FunctionalTest{
 		profilepicturePage.clickOnDone();
 		
 		Thread.sleep(2000);
-		profilepicturePage.clickOnNav();
-		Thread.sleep(2000);
-		profilepicturePage.clickOnSignOut();
-
+		SignOut(driver);
+		
 	}	
 	
 	

@@ -63,13 +63,13 @@ public class ForgotPassPage extends PageObject{
 	private WebElement signOutButton;
 	
 	@FindBy(how=How.ID, using="login-email") 
-	private WebElement loginemail1;
+	private WebElement loginemail;
 	
 	@FindBy(how=How.ID, using="login-password")
-	private WebElement loginpassword1;
+	private WebElement loginpassword;
 	
 	@FindBy(how=How.ID, using="login-submit")
-	private WebElement submitButton1;
+	private WebElement signInButton;
 	
 	
 	public ForgotPassPage(WebDriver driver) {
@@ -163,15 +163,15 @@ public class ForgotPassPage extends PageObject{
 		signOutButton.click();
 	}
 	public void enterCredentails(String email, String pass){
-		this.loginemail1.clear();
-		this.loginemail1.sendKeys(email);
+		this.loginemail.clear();
+		this.loginemail.sendKeys(email);
 		
-		this.loginpassword1.clear();
-		this.loginpassword1.sendKeys(pass);
+		this.loginpassword.clear();
+		this.loginpassword.sendKeys(pass);
 	}
 	
-	public void submitButton1(){
-		submitButton1.click();
+	public void signInButton(){
+		signInButton.click();
 
 	}
 	

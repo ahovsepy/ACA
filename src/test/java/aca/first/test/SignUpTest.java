@@ -30,8 +30,8 @@ public class SignUpTest extends FunctionalTest{
 	
 		SignUpPage signUpPage = new SignUpPage(driver);
 		assertTrue(signUpPage.isInitialized());
-		signUpPage.enterName1();
-		signUpPage.enterName2();
+		signUpPage.firstName();
+		signUpPage.lastName();
 		signUpPage.enterEmail();
 		signUpPage.enterPass();
 		Thread.sleep(2000);
@@ -39,10 +39,9 @@ public class SignUpTest extends FunctionalTest{
 		signUpPage.submit();
 		Thread.sleep(2000);
 		signUpPage.clickonLogo();
+		
 		Thread.sleep(2000);
-		signUpPage.clickOnNav();
-		Thread.sleep(2000);
-		signUpPage.clickOnSignOut();
+		SignOut(driver);
 		
 	}
 	

@@ -3,8 +3,6 @@ package aca.first.test;
 import static org.junit.Assert.assertTrue;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
-import aca.pages.LoginPage;
-import aca.pages.ReceiptPage;
 import aca.pages.SharePostPage;
 
 /*Test Case
@@ -28,15 +26,7 @@ public class SharePostTest extends FunctionalTest {
 	
 	@Test
 	public void Sharing ()throws InterruptedException{
-		driver.get(url);
-		
-		
-		LoginPage loginPage = new LoginPage(driver);
-		assertTrue(loginPage.isInitialized());
-		loginPage.enterCredentails(email, password);
-		
-		ReceiptPage receiptPage = loginPage.submit();
-		assertTrue(receiptPage.isInitialized());
+		SignIn(driver);
 		
 		SharePostPage sharepostPage = new SharePostPage(driver);
 		assertTrue(sharepostPage.isInitialized());
@@ -46,9 +36,7 @@ public class SharePostTest extends FunctionalTest {
 		sharepostPage.clickOnPost();
 		
 		Thread.sleep(2000);
-		sharepostPage.clickOnNav();
-		Thread.sleep(2000);
-		sharepostPage.clickOnSignOut();
+		SignOut(driver);
 	
 	
 	}	

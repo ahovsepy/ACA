@@ -3,8 +3,6 @@ package aca.first.test;
 import static org.junit.Assert.assertTrue;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
-import aca.pages.LoginPage;
-import aca.pages.ReceiptPage;
 import aca.pages.SearchPage;
 
 /*Test Case
@@ -29,15 +27,7 @@ public class SearchTest extends FunctionalTest{
 	
 	@Test
 	public void ConnectUser ()throws InterruptedException{
-		driver.get(url);
-		
-		
-		LoginPage loginPage = new LoginPage(driver);
-		assertTrue(loginPage.isInitialized());
-		loginPage.enterCredentails(email, password);
-		
-		ReceiptPage receiptPage = loginPage.submit();
-		assertTrue(receiptPage.isInitialized());
+		SignIn(driver);
 		
 		SearchPage searchPage = new SearchPage(driver);
 		assertTrue(searchPage.isInitialized());
@@ -52,10 +42,7 @@ public class SearchTest extends FunctionalTest{
 		searchPage.clickOnSendInvent();
 		
 		Thread.sleep(2000);
-		searchPage.clickOnNav();
-		
-		Thread.sleep(2000);
-		searchPage.clickOnSignOut();
+		SignOut(driver);
 	
 	
 	}	

@@ -27,16 +27,10 @@ public class LoginTest extends FunctionalTest {
 		
 	@Test
 	public void LogIn()throws InterruptedException{
-		driver.get(url);
-		LoginPage loginPage = new LoginPage(driver);
-		assertTrue(loginPage.isInitialized());
-		loginPage.enterCredentails(email, password);
+		SignIn(driver);
 		
-		ReceiptPage receiptPage = loginPage.submit();
-		assertTrue(receiptPage.isInitialized());
-		
-		loginPage.clickOnNav();
-		loginPage.clickOnSignOut();
+		Thread.sleep(2000);
+		SignOut(driver);
 	
 	}
 

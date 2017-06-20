@@ -3,9 +3,8 @@ package aca.first.test;
 import static org.junit.Assert.assertTrue;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
-import aca.pages.LoginPage;
 import aca.pages.MessagePage;
-import aca.pages.ReceiptPage;
+
 
 /*Test Case
 Test Case 03
@@ -31,14 +30,7 @@ public class MessageTest extends FunctionalTest {
 	@Test
 	public void Messaging () throws InterruptedException{
 		
-		driver.get(url);
-		
-		LoginPage loginPage = new LoginPage(driver);
-		assertTrue(loginPage.isInitialized());
-		loginPage.enterCredentails(email, password);
-		
-		ReceiptPage receiptPage = loginPage.submit();
-		assertTrue(receiptPage.isInitialized());
+		SignIn(driver);
 		
 		MessagePage messagePage = new MessagePage(driver);
 		assertTrue(messagePage.isInitialized());
@@ -55,11 +47,7 @@ public class MessageTest extends FunctionalTest {
 		messagePage.clickOnSend();
 		
 		Thread.sleep(2000);
-		messagePage.clickOnNav();
-		
-		Thread.sleep(2000);
-		messagePage.clickOnSignOut();
-		
+		SignOut(driver);
 	}	
 	
 	@AfterMethod

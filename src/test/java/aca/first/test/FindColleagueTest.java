@@ -48,8 +48,7 @@ public class FindColleagueTest extends FunctionalTest{
 		findcolleaguePage.clickOnSubmit();
 		
 		Thread.sleep(2000);
-		findcolleaguePage.clickOnNav();
-		findcolleaguePage.clickOnSignOut();
+		SignOut(driver);
 	
 	}
 	@AfterMethod

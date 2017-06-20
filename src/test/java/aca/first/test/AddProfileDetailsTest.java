@@ -29,15 +29,8 @@ public class AddProfileDetailsTest extends FunctionalTest{
 
 	@Test
 	public void AddEducation ()throws InterruptedException{
-		driver.get(url);
 		
-		
-		LoginPage loginPage = new LoginPage(driver);
-		assertTrue(loginPage.isInitialized());
-		loginPage.enterCredentails(email, password);
-		
-		ReceiptPage receiptPage = loginPage.submit();
-		assertTrue(receiptPage.isInitialized());
+		SignIn(driver);
 		
 		AddProfileDetailsPage addprofiledetailsPage = new AddProfileDetailsPage(driver);
 		assertTrue(addprofiledetailsPage.isInitialized());
@@ -63,10 +56,7 @@ public class AddProfileDetailsTest extends FunctionalTest{
 		addprofiledetailsPage.clickOnSave();
 		
 		Thread.sleep(2000);
-		addprofiledetailsPage.clickOnNav();
-		
-		Thread.sleep(2000);
-		addprofiledetailsPage.clickOnSignOut();
+		SignOut(driver);
 
 	}	
 	

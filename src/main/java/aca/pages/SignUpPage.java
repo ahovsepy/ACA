@@ -52,13 +52,13 @@ public class SignUpPage extends PageObject {
 	}
 	
 	
-	public void enterName1(){
+	public void firstName(){
 		this.firstName.clear();
 		char randomLetter = (char) ('a' + Math.random() * ('z'-'a' + 1));
 		firstName.sendKeys("User"+ randomLetter);
 	}
 		
-		public void enterName2(){
+		public void lastName(){
 		this.lastName.clear();
 		char randomLetter = (char) ('a' + Math.random() * ('z'-'a' + 1));
 		lastName.sendKeys("Name"+ randomLetter);
@@ -103,16 +103,6 @@ public class SignUpPage extends PageObject {
 			signOutButton.click();
 		}
 		
-		
-	
-	/*public void enterName(String firstName, String lastName){
-		this.firstName.clear();
-		this.firstName.sendKeys(firstName);
-
-		this.lastName.clear();
-		this.lastName.sendKeys(lastName);
-		
-	}*/
 	public ReceiptPage logo(){
 		logoButton.click();
 		return new ReceiptPage(driver);

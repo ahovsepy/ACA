@@ -50,12 +50,12 @@ public class ForgotPassTest extends FunctionalTest{
 		forgotpassPage.Submit();
 
 		
-		driver.get(url1);
+		driver.get(url_gmail);
 		
 		forgotpassPage.entergmailEmail(email);
 		forgotpassPage.nextButton();
 		Thread.sleep(2000);
-		forgotpassPage.entergmailPass(password1);
+		forgotpassPage.entergmailPass(password_gmail);
 		forgotpassPage.next1Button();
 		Thread.sleep(2000);
 		forgotpassPage.clickOnUnreadMessage();
@@ -74,15 +74,16 @@ public class ForgotPassTest extends FunctionalTest{
 		forgotpassPage.clickOnSaveButton();
 		Thread.sleep(2000);
 		forgotpassPage.clickOnBackHomeButton();
+		
 		Thread.sleep(2000);
-		forgotpassPage.clickOnNav();
-		forgotpassPage.clickOnSignOut();
+		SignOut(driver);
+		
 		Thread.sleep(2000);
 		forgotpassPage.enterCredentails(email, password);
-		forgotpassPage.submitButton1();
+		forgotpassPage.signInButton();
 		Thread.sleep(2000);
-		forgotpassPage.clickOnNav();
-		forgotpassPage.clickOnSignOut();
+		SignOut(driver);
+		
 	}
 	
 		
