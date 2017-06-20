@@ -4,8 +4,7 @@ import static org.junit.Assert.assertTrue;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 import aca.pages.AddProfileDetailsPage;
-import aca.pages.LoginPage;
-import aca.pages.ReceiptPage;
+
 
 /*Test Case
  
