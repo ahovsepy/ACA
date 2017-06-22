@@ -42,7 +42,7 @@ public class MyFirstWebDriverTest {
 private WebDriver driver;
 
 //	public String baseUrl="http://georgene:ofelie@v2fairygod.startupix.com/";
-   public String baseUrl="https://dev:D3v$!te@dev.fairygodboss.com/";
+   public String baseUrl="https://..............";
 	
 	@BeforeMethod
 	public void basicUrl(){
@@ -59,7 +59,7 @@ private WebDriver driver;
 	
 
 	
-/*	 @Test()
+	 @Test()
 public void login() throws InterruptedException{
 	   myLogIn logIn=new myLogIn(driver); 
 	   logIn.logintrue();
@@ -71,11 +71,12 @@ public void login() throws InterruptedException{
        Assert.assertEquals(my_title, expected_title);  
 }   
 
-    @Test()
+   @Test()
 public void logInFail() throws InterruptedException{
    	   myLogIn logIn=new myLogIn(driver);
 	   logIn.clickLogInclick();
-	   boolean welcome=driver.findElement(By.xpath("//h1[contains(.,'Welcome Back!')]")).isDisplayed(); 
+	   Thread.sleep(3000);
+	   boolean welcome=driver.findElement(By.xpath("//h2[contains(.,'welcome back!')]")).isDisplayed(); 
 		  System.out.println(welcome);
 	   logIn.logInclick();
 	   Thread.sleep(2000);
@@ -83,7 +84,7 @@ public void logInFail() throws InterruptedException{
 	   Thread.sleep(2000);
 	   logIn.LogInFail();
 	   Thread.sleep(3000);
-} */
+}
 
     @Test()
 public void salaries() throws InterruptedException{
@@ -92,32 +93,32 @@ public void salaries() throws InterruptedException{
 		   String salary=driver.getTitle();
 		   System.out.println("My salary title is "+salary);
 		   Thread.sleep(1000);
-		   String salary_title="Salary, pay, bonus of female employees  | Fairygodboss";
+		   String salary_title="Salary, pay, bonus of female employees | Fairygodboss";
 		   Thread.sleep(1000);
 		   Assert.assertEquals(salary, salary_title); 
 		   System.out.println("The test passed");
 } 
 
-/*	@Test()
+	@Test()
 public void articles() throws InterruptedException{
 	   careerAdvice article=new careerAdvice(driver);
 	   article.careerAdvicePage();
-       boolean article1=driver.findElement(By.xpath("//span[contains(.,'BY Natalia Marulanda')]")).isDisplayed();
+       boolean article1=driver.findElement(By.xpath("//p[contains(.,'11 Ideal Jobs for Introverts')]")).isDisplayed();
        System.out.println(article1);
        
        JavascriptExecutor jse = ((JavascriptExecutor) driver);
        jse.executeScript("window.scrollTo(0, document.body.scrollHeight)");
        
-       driver.findElement(By.xpath("//span[contains(.,'BY Natalia Marulanda')]")).click();
+       driver.findElement(By.xpath("//p[contains(.,'11 Ideal Jobs for Introverts')]")).click();
        String singlearticle_url=driver.getCurrentUrl();
        System.out.println("Actual URL is "+singlearticle_url);
        Thread.sleep(2000);
-       boolean username=driver.findElement(By.xpath("//span[contains(.,'BY Natalia Marulanda')]")).isDisplayed();
+       boolean username=driver.findElement(By.xpath("//span[contains(.,'BY Jaclyn Westlake')]")).isDisplayed();
        System.out.println(username);
        System.out.println("You are in single article page");
 } 
 	
-    @Test()
+   @Test()
 public void topics () throws InterruptedException{
 		careerAdvice topic=new careerAdvice(driver);
 		topic.careerAdvicePage();
@@ -156,14 +157,14 @@ Select drpIndustry1=new Select(driver.findElement(By.name("industry")));
 drpIndustry1.selectByVisibleText("Aerospace");
 Thread.sleep(3000);
 Select drpIndustry2=new Select(driver.findElement(By.name("industry")));
-drpIndustry2.selectByValue("automotive: parts");
-       driver.findElement(By.xpath("//input[@placeholder='Enter a company']")).sendKeys("Autoliv");
+drpIndustry2.selectByValue("conglomerate");
+       driver.findElement(By.xpath("//input[@placeholder='Enter a company']")).sendKeys("AMERCO");
        driver.findElement(By.xpath("//input[@placeholder='Select']")).sendKeys("Remote Jobs");
        JavascriptExecutor jse = (JavascriptExecutor)driver;
        jse.executeScript("window.scrollBy(0,250)", "");
        Thread.sleep(2000);
        driver.findElement(By.xpath("//button[contains(.,'Search')]")).click();
-       driver.findElement(By.xpath("//td[contains(.,'Automotive: Parts Manufacturing')]")).isDisplayed(); 
+       driver.findElement(By.xpath("//td[contains(.,'AMERCO')]")).isDisplayed(); 
        System.out.println("Your search is displayed");
        jse.executeScript("window.scrollBy(0,250)", "");
        driver.findElement(By.xpath("//a[contains(.,'Reset')]")).click();
@@ -269,10 +270,10 @@ drpIndustry2.selectByValue("automotive: parts");
 		driver.findElement(By.xpath("//input[@aria-label='Enter your password']")).sendKeys("06152016");
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//span[contains(.,'Next')]")).click();
-	    Thread.sleep(5000);	
+	    Thread.sleep(8000);	
 	    
-	    driver.findElement(By.xpath("//div[contains(@id,':2k')]")).click();
-	    Thread.sleep(2000);
+	 //   driver.findElement(By.xpath("//div[contains(@id,':2k')]")).click();
+	 //   Thread.sleep(2000);
 	    
 	    driver.findElement(By.xpath("//b[contains(.,'Reset your Fairygodboss password')]")).click();
 	    Thread.sleep(2000);
@@ -409,7 +410,7 @@ drpIndustry2.selectByValue("automotive: parts");
      jse.executeScript("arguments[0].scrollIntoView();", driver.findElement(By.xpath("//p[contains(.,'16. Please choose an anonymous username to associate with your review and provide an email address (which we will never spam or share) so we can confirm your account. *')]")));
 	signup.signUp();
 	Thread.sleep(2000);
-	} */
+	} 
 	
 	/*	@Test()
 	public void resetPassword () throws InterruptedException{

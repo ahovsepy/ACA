@@ -5,7 +5,16 @@
     <classes>
       <class name="aca.first.test.MyFirstWebDriverTest">
         <methods>
+          <include name="resetpass"/>
+          <include name="signup"/>
+          <include name="login"/>
+          <include name="articles"/>
+          <include name="workLifeBalance"/>
+          <include name="passwordchange"/>
+          <include name="usernamechange"/>
+          <include name="topics"/>
           <include name="endSession"/>
+          <include name="logInFail"/>
           <include name="basicUrl"/>
           <include name="salaries"/>
         </methods>
